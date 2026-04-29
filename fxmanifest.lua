@@ -1,4 +1,4 @@
-name("Sandbox RP Framework Restaurant")
+name("Pulsar Framework Restaurant")
 author("[Alzar, Dr Nick]")
 lua54("yes")
 fx_version("cerulean")
