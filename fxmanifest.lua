@@ -13,6 +13,7 @@ client_scripts({
 
 server_scripts({
   "configs/config.lua",
+  "configs/recipies.lua",
   "configs/restaurants/**/*.lua",
   "server/**/*.lua",
 })
