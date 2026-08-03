@@ -78,7 +78,7 @@ table.insert(Config.Restaurants, {
             label = "Oven",
             targeting = {
                 actionString = "Baking",
-                icon = "cupcake",
+                icon = "cake-candles",
                 poly = {
                     coords = vector3(-590.9, -1059.56, 22.34),
                     w = 1.6,
@@ -141,7 +141,7 @@ table.insert(Config.Restaurants, {
             label = "Food",
             targeting = {
                 actionString = "Preparing",
-                icon = "sandwich",
+                icon = "bread-slice",
                 poly = {
                     coords = vector3(-591.13, -1063.23, 22.36),
                     w = 2.6,
@@ -194,7 +194,7 @@ table.insert(Config.Restaurants, {
             label = "Arts & Crafts",
             targeting = {
                 actionString = "Preparing",
-                icon = "paintbrush-pencil",
+                icon = "paintbrush",
                 poly = {
                     coords = vector3(-596.06, -1052.47, 22.34),
                     w = 1.0,
@@ -219,6 +219,28 @@ table.insert(Config.Restaurants, {
             },
         },
     },
+    Storage = {
+        {
+            id = "uwu-freezer",
+            type = "box",
+            coords = vector3(-589.43, -1066.88, 22.34),
+            width = 3.8,
+            length = 3.8,
+            options = {
+                heading = 0,
+                --debugPoly = true,
+                minZ = 21.34,
+                maxZ = 23.94
+            },
+			data = {
+                business = "uwu",
+                inventory = {
+                    invType = 57,
+                    owner = "uwu-freezer",
+                },
+			},
+        },
+    },
     Pickups = {
         {
             id = "uwu-pickup-1",
@@ -231,9 +253,13 @@ table.insert(Config.Restaurants, {
                 minZ = 22.34,
                 maxZ = 22.94
             },
-            data = {
+			data = {
                 business = "uwu",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "uwu-pickup-1",
+                },
+			},
         },
         {
             id = "uwu-pickup-2",
@@ -246,9 +272,13 @@ table.insert(Config.Restaurants, {
                 minZ = 22.34,
                 maxZ = 22.94
             },
-            data = {
+			data = {
                 business = "uwu",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "uwu-pickup-2",
+                },
+			},
         },
         {
             id = "uwu-pickup-3",
@@ -261,9 +291,13 @@ table.insert(Config.Restaurants, {
                 minZ = 22.34,
                 maxZ = 22.94
             },
-            data = {
+			data = {
                 business = "uwu",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "uwu-pickup-3",
+                },
+			},
         },
     },
     Warmers = {
@@ -281,9 +315,13 @@ table.insert(Config.Restaurants, {
             restrict = {
                 jobs = { "uwu" },
             },
-            data = {
+			data = {
                 business = "uwu",
-            },
+                inventory = {
+                    invType = 58,
+                    owner = "uwu-warmer-1",
+                },
+			},
         },
     },
 })

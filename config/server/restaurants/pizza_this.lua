@@ -6,7 +6,7 @@ table.insert(Config.Restaurants, {
             label = "Drinks",
             targeting = {
                 actionString = "Preparing",
-                icon = "cup-straw-swoosh",
+                icon = "droplet",
                 poly = {
                     coords = vector3(810.74, -764.46, 26.78),
                     w = 1.0,
@@ -28,7 +28,7 @@ table.insert(Config.Restaurants, {
             label = "Drinks",
             targeting = {
                 actionString = "Preparing",
-                icon = "cup-straw-swoosh",
+                icon = "droplet",
                 poly = {
                     coords = vector3(814.05, -749.35, 26.78),
                     w = 1.0,
@@ -52,7 +52,7 @@ table.insert(Config.Restaurants, {
             label = "Pizza Oven",
             targeting = {
                 actionString = "Cooking",
-                icon = "pizza",
+                icon = "pizza-slice",
                 poly = {
                     coords = vector3(813.97, -752.85, 26.78),
                     w = 2.0,
@@ -101,7 +101,7 @@ table.insert(Config.Restaurants, {
             label = "Food",
             targeting = {
                 actionString = "Cooking",
-                icon = "pizza",
+                icon = "pizza-slice",
                 poly = {
                     coords = vector3(808.69, -761.17, 26.78),
                     w = 3.0,
@@ -158,6 +158,68 @@ table.insert(Config.Restaurants, {
             },
         },
     },
+    Storage = {
+        {
+            id = "pizza_this-freezer",
+            type = "box",
+            coords = vector3(802.49, -758.53, 26.78),
+            width = 3.0,
+            length = 3.6,
+            options = {
+                heading = 1,
+                --debugPoly=true,
+                minZ = 25.78,
+                maxZ = 29.58
+            },
+			data = {
+                business = "pizza_this",
+                inventory = {
+                    invType = 59,
+                    owner = "pizza_this-freezer",
+                },
+			},
+        },
+        {
+            id = "pizza_this-fridge",
+            type = "box",
+            coords = vector3(813.35, -749.39, 26.78),
+            width = 1.0,
+            length = 2.4,
+            options = {
+                heading = 0,
+                --debugPoly=true,
+                minZ = 25.78,
+                maxZ = 27.38
+            },
+			data = {
+                business = "pizza_this",
+                inventory = {
+                    invType = 60,
+                    owner = "pizza_this-fridge-1",
+                },
+			},
+        },
+        {
+            id = "pizza_this-wine",
+            type = "box",
+            coords = vector3(809.33, -761.47, 22.3),
+            width = 1.2,
+            length = 2.2,
+            options = {
+                heading = 0,
+                --debugPoly=true,
+                minZ = 21.3,
+                maxZ = 23.3
+            },
+			data = {
+                business = "pizza_this",
+                inventory = {
+                    invType = 77,
+                    owner = "pizza_this-wine",
+                },
+			},
+        },
+    },
     Pickups = {
         {
             id = "pizza_this-pickup-1",
@@ -170,9 +232,13 @@ table.insert(Config.Restaurants, {
                 minZ = 26.58,
                 maxZ = 27.38
             },
-            data = {
+			data = {
                 business = "pizza_this",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "pizza_this-pickup-1",
+                },
+			},
         },
         {
             id = "pizza_this-pickup-2",
@@ -185,9 +251,13 @@ table.insert(Config.Restaurants, {
                 minZ = 26.58,
                 maxZ = 27.38
             },
-            data = {
+			data = {
                 business = "pizza_this",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "pizza_this-pickup-2",
+                },
+			},
         },
     },
     Warmers = {
@@ -205,9 +275,13 @@ table.insert(Config.Restaurants, {
             restrict = {
                 jobs = { "pizza_this" },
             },
-            data = {
+			data = {
                 business = "pizza_this",
-            },
+                inventory = {
+                    invType = 60,
+                    owner = "pizza_this-warmer-1",
+                },
+			},
         },
         {
             id = "pizza_this-warmer-2",
@@ -223,9 +297,13 @@ table.insert(Config.Restaurants, {
             restrict = {
                 jobs = { "pizza_this" },
             },
-            data = {
+			data = {
                 business = "pizza_this",
-            },
+                inventory = {
+                    invType = 60,
+                    owner = "pizza_this-warmer-2",
+                },
+			},
         },
     },
 })

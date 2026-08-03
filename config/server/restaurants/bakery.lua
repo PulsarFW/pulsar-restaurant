@@ -6,7 +6,7 @@ table.insert(Config.Restaurants, {
             label = "Food",
             targeting = {
                 actionString = "Preparing",
-                icon = "baguette",
+                icon = "bread-slice",
                 poly = {
                     coords = vector3(-1263.97, -282.88, 37.39),
                     l = 5.2,
@@ -105,6 +105,28 @@ table.insert(Config.Restaurants, {
             },
         },
     },
+    Storage = {
+        {
+            id = "bakery-storage",
+            type = "box",
+            coords = vector3(-1259.49, -281.17, 37.38),
+            width = 2.0,
+            length = 3.4,
+            options = {
+                heading = 21,
+                --debugPoly=true,
+                minZ = 36.38,
+                maxZ = 38.58
+            },
+			data = {
+                business = "bakery",
+                inventory = {
+                    invType = 87,
+                    owner = "bakery-storage",
+                },
+			},
+        },
+    },
     Pickups = {
         {
             id = "bakery-pickup-1",
@@ -117,47 +139,59 @@ table.insert(Config.Restaurants, {
                 minZ = 36.59,
                 maxZ = 37.99
             },
-            data = {
+			data = {
                 business = "bakery",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "bakery-pickup-1",
+                },
+			},
         },
     },
     Warmers = {
-        {
-            id = "bakery-warmer-1",
-            coords = vector3(-1265.04, -279.81, 37.39),
-            length = 5.8,
-            width = 1.2,
-            options = {
+    	{
+    		id = "bakery-warmer-1",
+    		coords = vector3(-1265.04, -279.81, 37.39),
+    		length = 5.8,
+    		width = 1.2,
+    		options = {
                 heading = 21,
                 --debugPoly=true,
                 minZ = 36.39,
                 maxZ = 38.79
-            },
-            restrict = {
-                jobs = { "bakery" },
-            },
-            data = {
+    		},
+    		restrict = {
+    			jobs = { "bakery" },
+    		},
+			data = {
                 business = "bakery",
-            },
-        },
+                inventory = {
+                    invType = 88,
+                    owner = "bakery-warmer-1",
+                },
+			},
+    	},
         {
-            id = "bakery-warmer-2",
-            coords = vector3(-1259.47, -286.53, 37.38),
-            length = 5.0,
-            width = 1.0,
-            options = {
+    		id = "bakery-warmer-2",
+    		coords = vector3(-1259.47, -286.53, 37.38),
+    		length = 5.0,
+    		width = 1.0,
+    		options = {
                 heading = 21,
                 --debugPoly=true,
                 minZ = 36.38,
                 maxZ = 38.78
-            },
-            restrict = {
-                jobs = { "bakery" },
-            },
-            data = {
+    		},
+    		restrict = {
+    			jobs = { "bakery" },
+    		},
+			data = {
                 business = "bakery",
-            },
-        },
+                inventory = {
+                    invType = 88,
+                    owner = "bakery-warmer-2",
+                },
+			},
+    	},
     },
 })

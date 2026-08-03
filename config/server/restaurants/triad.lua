@@ -31,6 +31,28 @@ table.insert(Config.Restaurants, {
     		},
     	},
     },
+    Storage = {
+        {
+            id = "triad-storage",
+            type = "box",
+            coords = vector3(-810.51, -733.09, 23.78),
+            width = 5,
+            length = 5,
+            options = {
+                heading = 0,
+                --debugPoly=true,
+                minZ = 22.78,
+                maxZ = 25.98
+            },
+			data = {
+                business = "triad",
+                inventory = {
+                    invType = 98,
+                    owner = "triad-storage",
+                },
+			},
+        },
+    },
     Pickups = {
         {
             id = "triad-pickup-1",
@@ -43,14 +65,19 @@ table.insert(Config.Restaurants, {
                 minZ = 27.66,
                 maxZ = 29.06
             },
-            data = {
+			data = {
                 business = "triad",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "triad-pickup-1",
+                },
+			},
         },
     },
-    Fridges = {
+    Warmers = {
         {
-            id = "triad-fridge-1",
+            fridge = true,
+            id = "triad-1",
             coords = vector3(-826.09, -729.23, 28.06),
             width = 1.6,
             length = 1.0,
@@ -63,12 +90,17 @@ table.insert(Config.Restaurants, {
             restrict = {
                 jobs = { "triad" },
             },
-            data = {
+			data = {
                 business = "triad",
-            },
+                inventory = {
+                    invType = 96,
+                    owner = "triad-1",
+                },
+			},
         },
         {
-            id = "triad-fridge-2",
+            fridge = true,
+            id = "triad-2",
             coords = vector3(-831.43, -730.5, 28.06),
             width = 0.8,
             length = 1.0,
@@ -81,9 +113,13 @@ table.insert(Config.Restaurants, {
             restrict = {
                 jobs = { "triad" },
             },
-            data = {
+			data = {
                 business = "triad",
-            },
+                inventory = {
+                    invType = 96,
+                    owner = "triad-2",
+                },
+			},
         },
     },
 })

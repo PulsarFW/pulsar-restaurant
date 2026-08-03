@@ -32,6 +32,28 @@ table.insert(Config.Restaurants, {
 			},
 		},
 	},
+	Storage = {
+		{
+			id = "unicorn-storage",
+			type = "box",
+			coords = vector3(132.78, -1287.97, 29.27),
+			width = 2.0,
+			length = 1.0,
+			options = {
+				heading = 300,
+				--debugPoly=true,
+				minZ = 28.27,
+				maxZ = 30.67,
+			},
+			data = {
+				business = "unicorn",
+				inventory = {
+					invType = 83,
+					owner = "unicorn-storage",
+				},
+			},
+		},
+	},
 	Pickups = {
 		{
 			id = "unicorn-pickup-1",
@@ -46,6 +68,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "unicorn",
+				inventory = {
+					invType = 25,
+					owner = "unicorn-pickup-1",
+				},
 			},
 		},
 		{
@@ -61,6 +87,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "unicorn",
+				inventory = {
+					invType = 25,
+					owner = "unicorn-pickup-2",
+				},
 			},
 		},
 		{
@@ -76,12 +106,17 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "unicorn",
+				inventory = {
+					invType = 25,
+					owner = "unicorn-pickup-3",
+				},
 			},
 		},
 	},
-	Fridges = {
+	Warmers = {
 		{
-			id = "unicorn-fridge-1",
+			fridge = true,
+			id = "unicorn-1",
 			coords = vector3(130.02, -1280.64, 29.27),
 			width = 1.2,
 			length = 1.0,
@@ -96,10 +131,15 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "unicorn",
+				inventory = {
+					invType = 84,
+					owner = "unicorn-1",
+				},
 			},
 		},
 		{
-			id = "unicorn-fridge-2",
+			fridge = true,
+			id = "unicorn-2",
 			coords = vector3(132.77, -1285.38, 29.27),
 			width = 1.2,
 			length = 1.0,
@@ -114,6 +154,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "unicorn",
+				inventory = {
+					invType = 84,
+					owner = "unicorn-2",
+				},
 			},
 		},
 	},

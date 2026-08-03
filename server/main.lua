@@ -1,35 +1,29 @@
-local startup = false
-AddEventHandler('onResourceStart', function(resource)
-  if resource == GetCurrentResourceName() then
-    Wait(1000)
-    Startup()
-    exports['pulsar-core']:VersionCheck('PulsarFW/pulsar-restaurant')
+CreateThread(function()
+	Startup()
 
-    exports['pulsar-core']:MiddlewareAdd("Characters:Spawning", function(source)
-      if not startup then
-        startup = true
-        RunRestaurantJobUpdate(source, true)
-      end
-    end, 2)
-  end
+	plsr.Middleware:Add("Characters:Spawning", function(source)
+		RunRestaurantJobUpdate(source, true)
+	end, 2)
 end)
 
+AddEventHandler("Proxy:Shared:RegisterReady", function()
+	exports["pulsar_core"]:RegisterComponent("Restaurant", _RESTAURANT)
+end)
+
+_RESTAURANT = {}
+
 function RunRestaurantJobUpdate(source, onSpawn)
-  local charJobs = exports['pulsar-jobs']:GetJobs(source)
-  local warmersList = {}
-  local fridgesList = {}
-
-  for k, v in ipairs(charJobs) do
-    local jobWarmers = _warmers[v.Id]
-    if jobWarmers then
-      table.insert(warmersList, jobWarmers)
-    end
-
-    local jobFridges = _fridges[v.Id]
-    if jobFridges then
-      table.insert(fridgesList, jobFridges)
-    end
-  end
-
-  TriggerClientEvent("Restaurant:Client:CreatePoly", source, _pickups, warmersList, fridgesList, onSpawn)
+	local charJobs = plsr.Jobs.Permissions:GetJobs(source)
+	local warmersList = {}
+	for k, v in ipairs(charJobs) do
+		local jobWarmers = _warmers[v.Id]
+		if jobWarmers then
+			table.insert(warmersList, jobWarmers)
+		end
+	end
+	TriggerClientEvent("Restaurant:Client:CreatePoly", source, _pickups, warmersList, onSpawn)
 end
+
+AddEventHandler("Jobs:Server:JobUpdate", function(source)
+	RunRestaurantJobUpdate(source)
+end)

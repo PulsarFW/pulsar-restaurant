@@ -1,6 +1,7 @@
 table.insert(Config.Restaurants, {
 	Name = "Aztecas Clubhouse Bar",
 	Job = "aztecas",
+	IgnoreDuty = true,
 	Benches = {
 		bar = {
 			label = "Bar",
@@ -31,7 +32,28 @@ table.insert(Config.Restaurants, {
 			},
 		},
 	},
-	IgnoreDuty = true,
+	Storage = {
+		{
+			id = "aztecas-clubhouse-storage",
+			type = "box",
+			coords = vector3(494.29, -1530.54, 29.29),
+			length = 1.0,
+			width = 1.2,
+			options = {
+				heading = 319,
+				--debugPoly=true,
+				minZ = 26.69,
+				maxZ = 30.69,
+			},
+			data = {
+				business = "aztecas",
+				inventory = {
+					invType = 231,
+					owner = "aztecas_storage",
+				},
+			},
+		},
+	},
 	Pickups = {
 		{
 			id = "aztecas-clubhouse-pickup-1",
@@ -46,6 +68,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "aztecas",
+				inventory = {
+					invType = 230,
+					owner = "aztecas_pickup-1",
+				},
 			},
 		},
 	},

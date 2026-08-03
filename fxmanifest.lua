@@ -1,19 +1,29 @@
-name("Pulsar Framework Restaurant")
-author("[Alzar, Dr Nick]")
-version '1.0.4'
-lua54("yes")
-fx_version("cerulean")
-game("gta5")
-client_script("@pulsar-core/exports/cl_error.lua")
-client_script("@pulsar-pwnzor/client/check.lua")
+fx_version 'cerulean'
+game 'gta5'
+
+name 'Pulsar Restaurant'
+description 'Restaurant job with recipe-based cooking'
+author 'Artmines - maintained for Pulsar Framework'
+url 'https://pulsarframe.work'
+version 'v1.0.0'
+
+version_check 'yes'
+github 'https://github.com/PulsarFW/pulsar_restaurant'
+
+client_script '@pulsar_core/components/cl_error.lua'
+shared_script '@pulsar_core/core/sh_pulsar.lua'
+client_script '@pulsar_pwnzor/client/check.lua'
 
 client_scripts({
-  "client/**/*.lua",
+	'client/**/*.lua',
 })
 
 server_scripts({
-  "configs/config.lua",
-  "configs/recipies.lua",
-  "configs/restaurants/**/*.lua",
-  "server/**/*.lua",
+	'server/**/*.lua',
 })
+
+files({
+	'config/shared.lua',
+})
+
+lua54 'yes'

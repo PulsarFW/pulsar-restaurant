@@ -1,6 +1,7 @@
 table.insert(Config.Restaurants, {
 	Name = "Vagos Clubhouse Bar",
 	Job = "vagos",
+	IgnoreDuty = true,
 	Benches = {
 		bar = {
 			label = "Bar",
@@ -31,7 +32,28 @@ table.insert(Config.Restaurants, {
 			},
 		},
 	},
-	IgnoreDuty = true,
+	Storage = {
+		{
+			id = "vagos-clubhouse-storage",
+			type = "box",
+			coords = vector3(337.75, -1988.88, 24.21),
+			length = 1.6,
+			width = 1.0,
+			options = {
+				heading = 320,
+				--debugPoly=true,
+				minZ = 21.41,
+				maxZ = 25.41,
+			},
+			data = {
+				business = "vagos",
+				inventory = {
+					invType = 233,
+					owner = "vagos_storage",
+				},
+			},
+		},
+	},
 	Pickups = {
 		{
 			id = "vagos-clubhouse-pickup-1",
@@ -46,6 +68,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "vagos",
+				inventory = {
+					invType = 232,
+					owner = "vagos_pickup-1",
+				},
 			},
 		},
 	},

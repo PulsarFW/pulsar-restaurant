@@ -6,7 +6,7 @@ table.insert(Config.Restaurants, {
             label = "Food",
             targeting = {
                 actionString = "Preparing",
-                icon = "sandwich",
+                icon = "bread-slice",
                 poly = {
                     coords = vector3(121.6, -1038.57, 29.28),
                     w = 1.8,
@@ -68,7 +68,7 @@ table.insert(Config.Restaurants, {
             label = "Coffee Machine",
             targeting = {
                 actionString = "Preparing",
-                icon = "coffee-pot",
+                icon = "mug-hot",
                 poly = {
                     coords = vector3(124.04, -1039.23, 29.28),
                     w = 6.2,
@@ -104,7 +104,7 @@ table.insert(Config.Restaurants, {
             label = "Drinks Machine",
             targeting = {
                 actionString = "Preparing",
-                icon = "cup-straw-swoosh",
+                icon = "droplet",
                 poly = {
                     coords = vector3(123.46, -1042.84, 29.28),
                     w = 0.8,
@@ -143,6 +143,28 @@ table.insert(Config.Restaurants, {
             },
         },
     },
+    Storage = {
+        {
+            id = "beanmachine-fridge",
+            type = "box",
+            coords = vector3(123.59, -1039.2, 29.28),
+            width = 2.0,
+            length = 2.0,
+            options = {
+                heading = 340,
+                --debugPoly=true,
+                minZ = 28.08,
+                maxZ = 30.28
+            },
+			data = {
+                business = "beanmachine",
+                inventory = {
+                    invType = 79,
+                    owner = "beanmachine-fridge",
+                },
+			},
+        },
+    },
     Pickups = {
         {
             id = "beanmachine-pickup-1",
@@ -155,9 +177,13 @@ table.insert(Config.Restaurants, {
                 minZ = 29.08,
                 maxZ = 30.08
             },
-            data = {
+			data = {
                 business = "beanmachine",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "beanmachine-pickup-1",
+                },
+			},
         },
         {
             id = "beanmachine-pickup-2",
@@ -170,9 +196,13 @@ table.insert(Config.Restaurants, {
                 minZ = 29.08,
                 maxZ = 30.08
             },
-            data = {
+			data = {
                 business = "beanmachine",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "beanmachine-pickup-2",
+                },
+			},
         },
     },
 })

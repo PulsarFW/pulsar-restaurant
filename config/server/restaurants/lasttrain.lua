@@ -6,7 +6,7 @@ table.insert(Config.Restaurants, {
 			label = "Drinks",
 			targeting = {
 				actionString = "Preparing",
-				icon = "whiskey-glass-ice",
+				icon = "whiskey-glass",
 				poly = {
 					coords = vector3(-380.78, 270.12, 86.46),
 					w = 4.8,
@@ -90,7 +90,7 @@ table.insert(Config.Restaurants, {
 			label = "Food",
 			targeting = {
 				actionString = "Cooking",
-				icon = "burger-fries",
+				icon = "fire-burner",
 				poly = {
 					coords = vector3(-383.88, 262.59, 86.46),
 					w = 2.6,
@@ -179,6 +179,28 @@ table.insert(Config.Restaurants, {
 			},
 		},
 	},
+	Storage = {
+		{
+			id = "lasttrain-freezer",
+			type = "box",
+			coords = vector3(-383.95, 265.61, 86.46),
+			width = 1.4,
+			length = 0.8,
+			options = {
+				heading = 305,
+				--debugPoly = true,
+				minZ = 85.0,
+				maxZ = 87.66,
+			},
+			data = {
+				business = "lasttrain",
+				inventory = {
+					invType = 31,
+					owner = "lasttrain-freezer",
+				},
+			},
+		},
+	},
 	Pickups = {
 		{
 			id = "lasttrain-pickup-1",
@@ -193,6 +215,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "lasttrain",
+				inventory = {
+					invType = 25,
+					owner = "lasttrain-pickup-1",
+				},
 			},
 		},
 	},
@@ -213,6 +239,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "lasttrain",
+				inventory = {
+					invType = 30,
+					owner = "lasttrain-warmer-1",
+				},
 			},
 		},
 	},

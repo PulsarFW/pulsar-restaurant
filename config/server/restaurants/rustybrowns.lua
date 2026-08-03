@@ -6,7 +6,7 @@ table.insert(Config.Restaurants, {
 			label = "Drinks",
 			targeting = {
 				actionString = "Preparing",
-				icon = "cup-straw-swoosh",
+				icon = "droplet",
 				poly = {
 					coords = vector3(155.32, 244.1, 107.05),
 					w = 1.0,
@@ -82,6 +82,28 @@ table.insert(Config.Restaurants, {
 			},
 		},
 	},
+	Storage = {
+		{
+			id = "rustybrowns-storage",
+			type = "box",
+			coords = vector3(158.21, 247.93, 107.05),
+			width = 2,
+			length = 1.4,
+			options = {
+				heading = 340,
+				--debugPoly=true,
+				minZ = 104.65,
+				maxZ = 108.65,
+			},
+			data = {
+				business = "rustybrowns",
+				inventory = {
+					invType = 206,
+					owner = "rustybrowns-storage",
+				},
+			},
+		},
+	},
 	Pickups = {
 		{
 			id = "rustybrowns-pickup-1",
@@ -96,6 +118,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "rustybrowns",
+				inventory = {
+					invType = 204,
+					owner = "rustybrowns-pickup-1",
+				},
 			},
 		},
 		{
@@ -111,6 +137,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "rustybrowns",
+				inventory = {
+					invType = 205,
+					owner = "rustybrowns-pickup-2",
+				},
 			},
 		},
 	},
@@ -131,6 +161,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "rustybrowns",
+				inventory = {
+					invType = 202,
+					owner = "rustybrowns-warmer-1",
+				},
 			},
 		},
 		{
@@ -149,6 +183,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "rustybrowns",
+				inventory = {
+					invType = 203,
+					owner = "rustybrowns-warmer-2",
+				},
 			},
 		},
 	},

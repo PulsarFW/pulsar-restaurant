@@ -6,7 +6,7 @@ table.insert(Config.Restaurants, {
             label = "Kitchen",
             targeting = {
                 actionString = "Preparing",
-                icon = "bowl-chopsticks-noodles",
+                icon = "bowl-food",
                 poly = {
                     coords = vector3(-1185.3, -1157.42, 7.67),
                     l = 1.0,
@@ -98,6 +98,28 @@ table.insert(Config.Restaurants, {
             },
         },
     },
+    Storage = {
+        {
+            id = "noodle-freezer",
+            type = "box",
+            coords = vector3(-1183.76, -1155.12, 7.67),
+            width = 1.0,
+            length = 1.4,
+            options = {
+                heading = 15,
+                --debugPoly=true,
+                minZ = 6.67,
+                maxZ = 9.07
+            },
+			data = {
+                business = "noodle",
+                inventory = {
+                    invType = 89,
+                    owner = "noodle-freezer",
+                },
+			},
+        },
+    },
     Pickups = {
         {
             id = "noodle-pickup-1",
@@ -110,9 +132,13 @@ table.insert(Config.Restaurants, {
                 minZ = 6.67,
                 maxZ = 8.27
             },
-            data = {
+			data = {
                 business = "noodle",
-            },
+                inventory = {
+                    invType = 25,
+                    owner = "noodle-pickup-1",
+                },
+			},
         },
     },
     Warmers = {
@@ -130,9 +156,13 @@ table.insert(Config.Restaurants, {
             restrict = {
                 jobs = { "noodle" },
             },
-            data = {
+			data = {
                 business = "noodle",
-            },
+                inventory = {
+                    invType = 90,
+                    owner = "noodle-warmer-1",
+                },
+			},
         },
     },
 })

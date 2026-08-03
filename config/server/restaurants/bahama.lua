@@ -32,6 +32,28 @@ table.insert(Config.Restaurants, {
 			},
 		},
 	},
+	Storage = {
+		{
+			id = "bahama-storage",
+			type = "box",
+			coords = vector3(-1377.012, -634.215, 30.320),
+			width = 2.0,
+			length = 1.0,
+			options = {
+				heading = 215.0,
+				--debugPoly=true,
+				minZ = 29.320,
+				maxZ = 31.320,
+			},
+			data = {
+				business = "bahama",
+				inventory = {
+					invType = 157,
+					owner = "bahama-storage",
+				},
+			},
+		},
+	},
 	Pickups = {
 		{
 			id = "bahama-pickup-1",
@@ -46,6 +68,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "bahama",
+				inventory = {
+					invType = 160,
+					owner = "bahama-pickup-1",
+				},
 			},
 		},
 		{
@@ -61,14 +87,17 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "bahama",
+				inventory = {
+					invType = 161,
+					owner = "bahama-pickup-2",
+				},
 			},
 		},
 	},
 	Warmers = {
-	},
-	Fridges = {
 		{
-			id = "bahama-fridge-1",
+			fridge = true,
+			id = "bahama-1",
 			coords = vector3(-1404.18, -598.65, 30.32),
 			width = 0.8,
 			length = 1.2,
@@ -83,10 +112,15 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "bahama",
+				inventory = {
+					invType = 158,
+					owner = "bahama-1",
+				},
 			},
 		},
 		{
-			id = "bahama-fridge-2",
+			fridge = true,
+			id = "bahama-2",
 			coords = vector3(-1401.97, -597.04, 30.32),
 			width = 1.0,
 			length = 1.2,
@@ -101,6 +135,10 @@ table.insert(Config.Restaurants, {
 			},
 			data = {
 				business = "bahama",
+				inventory = {
+					invType = 158,
+					owner = "bahama-2",
+				},
 			},
 		},
 	},
